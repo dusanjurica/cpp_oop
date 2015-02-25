@@ -18,12 +18,23 @@ using namespace std;
 
 base_header inst;
 
+enum class valid_states {ON, HIGH_Z, OFF};
+
+valid_states switchka;
+
 int main(int argc, const char * argv[]) {
     // insert code here...
     
     inst.delta = inst.key10;
     
+    switchka = valid_states::HIGH_Z;
+    
+    if (switchka==valid_states::HIGH_Z)
+        cout << "switchka je ve stavu vysoke impedance\r\n";
+    
     cout << inst.delta;
+    
+    
     
     std::cout << "Hello, World!\n";
     return 0;
