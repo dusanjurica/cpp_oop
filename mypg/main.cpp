@@ -8,6 +8,7 @@
 
 
 #include <iostream>
+#include <string>
 #include <ConditionalMacros.h>
 
 using namespace std;
@@ -40,7 +41,6 @@ valid_states switchka;
 
 int main(int argc, const char * argv[]) {
 
-    
     inst.st();
     inst.gt();
     
