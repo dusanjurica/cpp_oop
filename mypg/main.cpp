@@ -9,11 +9,11 @@
 
 #include <iostream>
 #include <string>
-#include <ConditionalMacros.h>
 
 using namespace std;
 
-class base_header{
+class BaseHeader
+{
 private:
     float A_num = 33.29;
     float B_num = 27.31;
@@ -24,20 +24,18 @@ public:
     void gt();
 };
 
-void base_header::st(){
-    pom = A_num*B_num;
+void BaseHeader::st(){
+    //this->pom = A_num*B_num;
+    this->A_num *= 1200;
+    this->B_num *= 4000;
 };
 
-void base_header::gt(){
+void BaseHeader::gt(){
     printf("Hodnota A_num je %f\r\nHodnota B_num je %f\r\nJejich produkt je %f\r\n",
            A_num, B_num, pom);
 };
 
-base_header inst;
-
-enum class valid_states {ON, HIGH_Z, OFF};
-
-valid_states switchka;
+BaseHeader inst;
 
 int main(int argc, const char * argv[]) {
 
