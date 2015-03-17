@@ -15,24 +15,62 @@ using namespace std;
 class BaseHeader
 {
 private:
-    float A_num = 33.29;
-    float B_num = 27.31;
-    float pom;
+    char blob[256];
+    char meta[20];
     
 public:
+    BaseHeader();
     void st();
     void gt();
 };
 
+BaseHeader::BaseHeader()
+{
+    int * iter = new int();
+    
+    for (*iter=0; *iter<256; (*iter)++)
+    {
+        this->blob[*iter] = 'D';
+    }
+    
+    for (*iter=0; *iter<20; (*iter)++)
+    {
+        this->meta[*iter] = 'E';
+    }
+    
+    delete iter;
+}
+
 void BaseHeader::st(){
-    //this->pom = A_num*B_num;
-    this->A_num *= 1200;
-    this->B_num *= 4000;
+
 };
 
 void BaseHeader::gt(){
-    printf("Hodnota A_num je %f\r\nHodnota B_num je %f\r\nJejich produkt je %f\r\n",
-           A_num, B_num, pom);
+
+    int* i=new int();
+    
+    void* arr[2];
+    
+    arr[0] = &meta;
+    arr[1] = &blob;
+    
+    cout << "| " << arr[0] << " |" << endl;
+    cout << "| " << arr[1] << " |" << endl;
+    
+    cout << "| " << *(char*)arr[0] << endl;
+    cout << "| " << *(char*)arr[1] << endl;
+    
+    for (*i=0; *i<20; (*i)++)
+    {
+        cout << this->meta[*i];
+    }
+    
+    for (*i=0; *i<256; (*i)++)
+    {
+        cout << this->blob[*i];
+        //cout << *i << " : vypis binarniho blobu: " << this->blob[*i] << endl;
+    }
+    delete i;
 };
 
 BaseHeader inst;
