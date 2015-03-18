@@ -57,6 +57,8 @@ void BaseHeader::gt(){
     cout << "| " << arr[0] << " |" << endl;
     cout << "| " << arr[1] << " |" << endl;
     
+    
+    // Get value from the address in arr[]
     cout << "| " << *(char*)arr[0] << endl;
     cout << "| " << *(char*)arr[1] << endl;
     
